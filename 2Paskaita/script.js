@@ -61,3 +61,40 @@ console.log("Trio");
 } else if (musician > 4) {
     console.log("Didelė grupė");
 }
+
+
+// 1. Uzduotis
+const leagalAge=21;
+const clientAge=6;
+
+if (clientAge >= leagalAge) {
+    console.log("Klientas pilnametis")
+} else if (clientAge < leagalAge) {
+    console.log("Klientas nepilnametis")
+}
+
+// 2Uzduotis
+const myName="Domante"
+
+if (myName.length > 6) {
+console.log("Ilgas vardas")
+}
+
+// 3Uzduotis
+const myAge=19;
+if (myAge > 100 || myAge <0 ) {
+    console.log("Invalid age")
+} else if (myAge<18) {
+    console.log("Child")
+} else {
+    console.log("Adult")
+}
+
+//4Užduotis
+const car="Audi";
+
+if (car==="VW"|| car==="Audi" || car==="Bentley"|| car==="Bugatti" || car==="Lamborghini" || car==="Porsche") {
+    console.log("VW Group")
+} else if (car==="BMW" || car==="Mini" || car==="Rolls-Royce") {
+    console.log("BMW Group")
+}
