@@ -107,3 +107,49 @@ info.append(title, description, benefits);
 //noriu i card ideti paveiksliuka ir info
 card.append(image, info);
 document.body.append(card);
+
+
+//NAMU DARBAI
+
+//1. Susikuriame div elementa
+const profile = document.createElement("div");
+profile.style.textAlign="center";
+profile.style.background="white";
+profile.style.color="grey";
+profile.style.width="40%";
+profile.style.textAlign="center";
+profile.style.margin="10rem auto 0 auto";
+profile.style.borderRadius="3%";
+profile.style.boxShadow="3px 3px #E0E0E0";
+//2. Susikuriame img elementa
+const picture = document.createElement("img");
+picture.src ="https://www.facebeautyscience.com/wp-content/uploads/2020/04/face-beauty-skin-face2-proc.jpg";
+picture.alt ="Women face";
+picture.style.width="150px";
+picture.style.height="150px";
+picture.style.objectFit="cover";
+picture.style.borderRadius="50%";
+picture.style.border="3px solid white";
+picture.style.boxShadow="3px 2px #E0E0E0";
+picture.style.marginTop="-60px";
+
+//3.susikuriame h2 elementa
+const womenName = document.createElement("h2");
+womenName.textContent="Domantė Navarskaitė";
+womenName.style.paddingTop="20px";
+womenName.style.color="#454545";
+
+//4. Susikuriame p elementa
+const jobTitle = document.createElement("p");
+jobTitle.textContent="Founder of @paravelic";
+
+//5. Susikuriame kita p elementa
+const states = document.createElement("p");
+states.textContent="Austin, TX";
+states.style.paddingBottom="30px";
+//Atvaizduojame
+
+document.body.style.background="#D4F1F4";
+
+profile.append(picture,womenName, jobTitle, states);
+document.body.append(profile);
