@@ -1,5 +1,3 @@
-console.log("11Paskaita");
-
 console.log("11 paskaita - objektai");
 
 // Tuščias objektas
@@ -75,45 +73,51 @@ const codeClass = {
     age: 23,
     experience: 3,
   },
+  students: ["Edvinas", "Liudmila", "Rima", "Karolis"],
 };
 
 // console.log(codeClass.lecturer.name);
 const lecturerFullName = `${codeClass.lecturer.name} ${codeClass.lecturer.surname}`;
 // console.log(lecturerFullName);
 
-// const treeForm = document.getElementById("tree-form");
+// console.log(codeClass.students[0]);
+const studentsCount = codeClass.students.length;
+// console.log(studentsCount);
 
-treeForm.addEventListener("submit", handleSubmitTreeForm);
+codeClass.type = "onsite";
 
-function handleSubmitTreeForm(event) {
-event.preventDefault();
+const student = {};
 
-const treeName = document.querySelector("input[name='tree-name']");
-const treeAge = document.querySelector("input[name='tree-age']");
+// console.log(student.name);
 
-console.log(treeName.value);
-console.log(treeAge.value);
-}
+student.name = "Rokas";
+student.surname = "Andreikenas";
+
+// console.log(student.name);
+
+const names = ["Edvinas", "Liudmila", "Rima", "Karolis"];
+
+names[0] = "Rokas";
 
 const treeForm = document.getElementById("tree-form");
 
 treeForm.addEventListener("submit", handleSubmitTreeForm);
 
 function handleSubmitTreeForm(event) {
-event.preventDefault();
+  event.preventDefault();
 
-const treeName = document.querySelector("input[name='tree-name']");
-const treeAge = document.querySelector("input[name='tree-age']");
+  const treeName = document.querySelector("input[name='tree-name']");
+  const treeAge = document.querySelector("input[name='tree-age']");
 
-const name = treeName.value;
-const age = Number(treeAge.value);
+  const name = treeName.value;
+  const age = Number(treeAge.value);
 
-const tree = {
-name: name,
-age: age,
-isOld: age > 100 ? true : false,
-// isOld: age > 100,
-};
+  const tree = {
+    name: name,
+    age: age,
+    isOld: age > 100 ? true : false,
+    // isOld: age > 100,
+  };
 
-console.log(tree);
+  console.log(tree);
 }
