@@ -106,8 +106,12 @@ console.log(nums);
 //4. UŽDUOTIS. Grąžink didžiausią skaičių (vieną skaičių).
 
 const points = [10, 5, 20, 4];
-const max = points.sort((a,b) => a-b).reverse() [0];
+const max = points.sort((a,b) => a-b).reverse() [0]; // [0] paima pirma masyvo elementas
 console.log(max);
+
+//teisingesnis budas butu nenaudoti reverse
+// points.sort((a,b) => b-a);
+//console.log(points[0]); pirma reiksme grazina [0];
 
 // UŽDUOTYS SU REDUCE()
 // 1) Su reduce visus juos sudėk ir grąžink vieną skaičių.
@@ -122,7 +126,8 @@ console.log(l1);
 //2) Grazink skaiciu, kiek elementu yra is 3 simbolius
 
 const carList = ["BMW", "MCB", "VWG", "Toyota", "AUDI"];
-const threeSymbols = carList.reduce((a,v) => v.length===3 ? a+1: a, 0);
+const threeSymbols = carList.reduce((a,v) => v.length===3 ? a+1: a, 0); //klausia ar BMW stringas yra 3 simboliai, tuomet jei taip, a+1(pradine reiksme 0)
+//gauname 1, tuomet a=1, 1+1=2, tuomet 2+1=3 ir viskas.
 console.log(threeSymbols);
 
 //3) Grazink didziausia skaiciu is array naudojant reduce
