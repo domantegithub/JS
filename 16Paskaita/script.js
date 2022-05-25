@@ -155,19 +155,26 @@ const drinks = [
   console.log(fn(drinks));
 
   //Sukurkite funkcija, kuri paims minutes ir pavers i sekundes
-
   function minutesToSeconds(minutes) {
-      return minutes*60;
+      const seconds =minutes *60;
+      return `${seconds} "seconds"`;
   }
   //iskvieciam funkcija
 console.log(minutesToSeconds(1));
+//2) Budas su arrow
+const arrowMinutesToSeconds=(minutes) => `${minutes*60}` + " seconds";
+console.log(arrowMinutesToSeconds(3));
 
 //Funkcija, kuri paims vartotoju amziu ir paskaiciuos kiek dienu nugyveno
 
 function myDays(year){
-    return year*365;
+    const days = year*365;
+    return `${days} "dienos"`;
 }
 console.log(myDays(20));
+//2) budas su arrow
+const arrowMyDays=(year) => `${years*365} + "dienos"`;
+console.log(arrowMyDays(25));
 
 //Funkcija arrow, kuri padarytu skaiciaus kvadrata
 const mySquareFuncion =(num) => num*num;
@@ -184,6 +191,14 @@ console.log(lastLetter("Petras"));
 //funckija, kuri paims stringa apvers ji ir grazins mazosiomis
 const reverseName=(text) => text.split("").reverse().join("").toLowerCase();
 console.log(reverseName("Petras"));
+//2) budas
+const reverseString =(string) => {
+    const splited = string.split(""); //funckija atskiria kiekviena stringo raide atskirai
+    const reversed = splited.reverse(); //apverciam stringa
+    const joined= reversed.join(""); // sudeda raides atgal i viena stringa
+    const lowerCased=joined.toLowerCase(); // paverciam i mazasias raides
+    console.log(lowerCased("Petras"));
+}
 
 //funckija, kuri grazins didziausia neigiama skaiciu
 const numberList= [-1, -100, -5, 10, 0, 11];
