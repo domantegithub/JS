@@ -67,10 +67,11 @@ const firsUpperLetter=(text)=>text.charAt(0).toUpperCase();
 console.log(firsUpperLetter("dogas"));
 
 //6) Funkcija, kuri grazins stringa be pirmosios raides, o antroji bus didzioji
-// const withoutFistLetter=(string)=> {
-//     const sliced=string.slice(1).charAt(0).toUpperCase();
-// }
-// console.log(sliced("Petras"));
+const withoutFistLetter=(string)=> {
+    const sliced=string.slice(1);
+    return sliced[0].toUpperCase() + sliced.slice(1).toLowerCase();
+}
+console.log(withoutFistLetter("Petras"));
 
 //MASYVAI
 //Parasykite skaiciu zmoniu, kuriu vardai prasideda is A
@@ -84,7 +85,7 @@ console.log(countNamesFromA(data));
 //Pasakykite skaiciu kiek zmoniu varde turi raide "K" tarp siu duomenu ???
 
 function countNamesK(array) {
-    const persons = array.filter((person)=>person.first_name.charAt()==="K");
+    const persons = array.filter((person)=>person.first_name.includes("K"));
     return persons.length;
 };
 
