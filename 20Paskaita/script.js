@@ -117,3 +117,18 @@ console.log(jazzify(["G", "F", "C"]));
 console.log(jazzify(["Dm", "G", "E", "A"]));
 console.log(jazzify(["F7", "E7", "A7", "Ab7", "Gm7", "C7"]));
 console.log(jazzify([]));
+
+const givenExample = "Rokas !@#$%^ Tomas 123";
+// ats: "Rokas !!@@##$$%%^^ Tomas 112233"
+//split("") -> ["a", "b", "c"]
+// map(char)=> "a"+"a"
+//join("")=>["a","a"] =>"aa"
+
+//funckija tikrina ar raide ar ne, nes tik raide gali buti didzioji ir mazoji
+//Tikriname ar sita reiksme nera lygi
+const isLetter = (char) => char.toLowerCase() !== char.toUpperCase();
+
+//tikriname ar yra raide arba tuščia vieta (tarpelis), tuomet graziname char raide, jei ne tada dvigubina(char +char)
+const newExample = givenExample.split("").map((char) => (isLetter(char) || char === " " ? char : char + char)).join("");
+console.log(newExample);
+
