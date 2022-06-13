@@ -1,0 +1,41 @@
+$bg-color: #e6e6e6;
+$card-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+$done-color: #22bb33;
+$undone-color:#aaaaaa;
+
+body {
+    background-color: $bg-color;
+}
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo-container {
+    width: 25%;
+    padding: 2.5rem;
+    background-color: white;
+    box-shadow: $card-shadow;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    &-title {
+        font-size: 24px;
+        margin: 0;
+    }
+    &-status {
+        padding: 12px;
+        background-color: $undone-color;
+        border-radius: 50%;
+        
+        &.done {
+            background-color: $done-color;
+        }
+    }
+}
