@@ -20,10 +20,46 @@ const renderTodo = (todo) => {
   fetch("https://jsonplaceholder.typicode.com/todos")
     .then((resp) => resp.json())
     .then((response) => {
-      const todos = response.slice(0, 10);
+      const todos = response.slice(0, 5);//paimam 10 elementu
   
       todos.forEach((todo) => renderTodo(todo)); //paima elementus
     })
     .catch((error) => {
       console.error(error);
     });
+
+    // Antra uzduoties dalis, paspaudus mygtuka naujas item ikris i sarao apacia
+
+
+      //2) issitraukati fukcijos viduje input lauka (iskeliam i virsu)
+   const handleAddTodo = (e) => {
+    const todoText = document.querySelector("input[name='todo-text']");
+// 3) input duomenis sudeti su append i todo list apacia. Kad tai padaryti pirma reikia susikurti nauja objekta
+    const newTodo = {title: todoText.value, completed:false};
+    
+    //4)issiunciam naujus duomenis atgal i serveri, kad issaugotu
+
+    const params = {
+      method: "POST", //duodame uzduoti siusti duomenis
+      body:JSON.stringify(newTodo), //nurodome kokius duomenis siusti
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },    
+      };
+
+    fetch("https://jsonplaceholder.typicode.com/todos",params)
+    .then(resp => resp.json())
+    .then(response => {
+      renderTodo(response);
+      todoText.value = "";
+      console.log(response)
+    })
+   .catch(error => {
+     console.error(error)
+   })
+  };
+    //1) issitrukiam is html mygtuka ir priskiriam addEventListener
+   
+   const addButton = document.querySelector(".add-button");
+   addButton.addEventListener("click", handleAddTodo);
+

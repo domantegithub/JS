@@ -39,3 +39,20 @@ body {
         }
     }
 }
+
+.todo-input {
+    input {
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid grey;
+        min-width: 200px;
+    }
+    .add-button {
+        margin-left: 16px;
+        padding: 9px 15px;
+        border-radius: 4px;
+        border: none;
+        background-color: #24a0ed;
+        color: white;
+    }
+}

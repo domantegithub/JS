@@ -32,4 +32,19 @@ body {
 }
 .todo-status.done {
   background-color: #22bb33;
+}
+
+.todo-input input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid grey;
+  min-width: 200px;
+}
+.todo-input .add-button {
+  margin-left: 16px;
+  padding: 9px 15px;
+  border-radius: 4px;
+  border: none;
+  background-color: #24a0ed;
+  color: white;
 }/*# sourceMappingURL=style.css.map */
