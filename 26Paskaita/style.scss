@@ -28,6 +28,10 @@ body {
     &-title {
         font-size: 24px;
         margin: 0;
+
+        &.done {
+            color: lightgrey;
+        }
     }
     &-status {
         padding: 12px;

@@ -25,6 +25,9 @@ body {
   font-size: 24px;
   margin: 0;
 }
+.todo-title.done {
+  color: lightgrey;
+}
 .todo-status {
   padding: 12px;
   background-color: #aaaaaa;

@@ -6,11 +6,17 @@ const renderTodo = (todo) => {
     const todoStatus = document.createElement("span");
   //pridedam elementam klases
     todoEl.className = "todo";
-    todoTitle.className = "todo-title";
+    todoTitle.className = completed ? "todo-title done" : "todo-title";
     // padaro skirtingos spalvos rutuliukus. zalias - jei completed, pilkas - jei ne.
     todoStatus.className = completed ? "todo-status done" : "todo-status";
   //priskiriam turini
     todoTitle.textContent = title;
+//darom zalia mygtuka kai paspaudziam ant burbuliuko
+    todoStatus.addEventListener("click", () => {
+      todoStatus.classList.toggle("done");
+      todoTitle.classList.toggle("done;")
+      todoStatus.completed = !todoStatus.completed;
+    });
   //itraukiam naujus elementus
     todoEl.append(todoTitle, todoStatus);
     document.querySelector(".todo-container").prepend(todoEl);
@@ -22,7 +28,7 @@ const renderTodo = (todo) => {
     .then((response) => {
       const todos = response.slice(0, 5);//paimam 10 elementu
   
-      todos.forEach((todo) => renderTodo(todo)); //paima elementus
+      todos.forEach((todo) => renderTodo(todo)); //paima elementus ir juos islista i sarasa
     })
     .catch((error) => {
       console.error(error);
