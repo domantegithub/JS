@@ -89,7 +89,7 @@ const homeCity="Vilnius";
 const streetNo=15;
 const vilnius=true;
 
-console.log(streetNo == homeCity);
+console.log(streetNo == homeCity); //ar reiksme yra tokia pati
 console.log(streetNo != homeCity);
-console.log(homeCity === homeCity);
+console.log(homeCity === homeCity); //ar reiksme ir tipas yra toks pat
 console.log(streetNo !==streetNo);

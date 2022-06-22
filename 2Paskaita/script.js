@@ -38,13 +38,18 @@
 // const number = 1;
 
 // //check if the number is even
-// if(number % 2 == 0) {
+// if(number % 2 == 0) { //ziuri ar liekana lygi nuliui, t.y. ar nera liekanos
 //     console.log("Lyginis");
 // }
 // // if the number is odd
 // else {
 //     console.log("Nelyginis");
 // }
+
+//pvz.: 8/2=4;
+//8-8=0;
+//1/2=0.5
+//1-1=
 
 let musician = 2;
 

@@ -5,7 +5,7 @@
 //Kai forma sumbitinama, funckija labai greit issiuncia ir parefresina psl., todel "Žinute" rodo labai trumpai.
 //Todel reikia parasyti funckija, kuri sustabdys refreshinima (event.preventDefault)
 
- //pasiimam ko mums reikia is HTML, siu atveju formos. Jei ismeta null- klaida
+ //pasiimam ko mums reikia is HTML, siu atveju formos. 
 const exampleForm = document.getElementById("example-form");
 
 exampleForm.addEventListener("submit", handleSubmitExampleForm);
