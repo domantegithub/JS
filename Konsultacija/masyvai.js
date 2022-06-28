@@ -88,23 +88,24 @@
 //Ištrinti žalia ir balta spalva naudojant slice() metoda
 const colors = ["red", "blue","green", "white","black", "yellow", "purple"];
 
-function greenAndWhite(color) {
-const sliced = color.slice(0,2);
-const sliced2=color.slice(-3);
+function removeGreenAndWhite(colorArray) {
+const sliced = colorArray.slice(0,2);
+const sliced2=colorArray.slice(-3);
 const combine =sliced.concat(sliced2);
    return combine;
 }
-
-console.log(greenAndWhite(colors));
+const removedGreenAndWhite = removeGreenAndWhite(colors);
+console.log(removedGreenAndWhite);
 
 //Prideti oranzine spalva vietoje juodos naudojant splice() metoda
-//Kodel nepadaudojamas praeitas gautas masyvas?
+//Kodel nepadaudojamas praeitas gautas masyvas? Reikia ideti gauna praeitos uzduoties rezultata
 
-function addOrange(color) {
-    color.splice(2,1, "Orange");
+
+function addOrange(colorArray) {
+    colorArray.splice(2,1, "orange");
 }
-addOrange(colors);
-console.log(colors);
+addOrange(removedGreenAndWhite); //idejome praeitos uzduoties gauta rezultat
+console.log(removedGreenAndWhite); //consolinam taip pat
 
 //išfiltruoti reiksmes, kurios turi raide e
 
@@ -112,25 +113,35 @@ function itemsWithE(array) {
     const newColors = array.filter((color) => color.includes("e"));
     return newColors;
 }
+itemsWithE(removedGreenAndWhite)
+console.log(removedGreenAndWhite);
 
-console.log(itemsWithE(colors));
+//kitas budas
+const hasEChar = removedGreenAndWhite.filter((color) => color.includes("e"));
+console.log(hasEChar);
 
 //Išfiltruoti reiksmes, kuriu ilgis trumpesnes nei 4 raide
 
 function shorterThenFour(array) {
-    const newColorArray = array.filter((n)=> n.length <= 4);
+    const newColorArray = array.filter((n)=> n.length < 4);
     return newColorArray;
 }
 console.log(shorterThenFour(colors));
 
+const shorterThen4Char = removedGreenAndWhite.filter((color)=> color.length< 4);
+console.log("shorter then 4 char", shorterThen4Char);
+
 //Patikrinti ar bent viena reiksme turi z raide
 //nepavyko!!!
-function includesZ(array) {
-    const colorsWithZ = array.filter((color) => {
-        if (color.includes("z")) {
-        return true;
-    }});
-    return colorsWithZ;
-}
 
-console.log(includesZ(colors));
+const hasZChar = removedGreenAndWhite.some((color) => color.includes("z"));
+console.log("has Z char", hasZChar);
+
+//Patikrinti ar turi reiksme brown
+const hasBrownValue = removedGreenAndWhite.some((color) => color=== "brown");
+console.log("has brown", hasBrownValue);
+
+//kiek elementu turi a raide
+const hasAChar = removedGreenAndWhite.filter((color) => color.includes("a"));
+const aLetterCount =hasAChar.length;
+console.log("has A letter", aLetterCount);
