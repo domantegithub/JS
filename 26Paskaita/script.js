@@ -1,24 +1,46 @@
 const renderTodo = (todo) => {
-    const { completed, title } = todo; //istraukia kintamuosius
+    const {id, completed, title } = todo; //istraukia kintamuosius
    //sukuriam nauja elementa
     const todoEl = document.createElement("div");
     const todoTitle = document.createElement("p");
+    const todoActions = document.createElement("div"); //new 06.28 kuriam delete 
     const todoStatus = document.createElement("span");
+    const deleteButton = document.createElement("button"); //new 06.28
   //pridedam elementam klases
     todoEl.className = "todo";
     todoTitle.className = completed ? "todo-title done" : "todo-title";
     // padaro skirtingos spalvos rutuliukus. zalias - jei completed, pilkas - jei ne.
     todoStatus.className = completed ? "todo-status done" : "todo-status";
+    todoActions.className = "todo-actions"; //new 06.28
+    deleteButton.className = "todo-delete"; //new 06.28
   //priskiriam turini
     todoTitle.textContent = title;
+    deleteButton.textContent = "Delete";//new 06.28 priskiriam mygtukui zodi delete
 //darom zalia mygtuka kai paspaudziam ant burbuliuko
     todoStatus.addEventListener("click", () => {
       todoStatus.classList.toggle("done");
-      todoTitle.classList.toggle("done;")
+      todoTitle.classList.toggle("done");
       todoStatus.completed = !todoStatus.completed;
     });
+
+    deleteButton.addEventListener("click", () => { //new 06.28
+      console.log(todo);
+      const params = {
+        method: "DELETE",
+      };
+      fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, params)
+      .then(resp => resp.json())
+      .then(response => {
+        console.log("successfully deleted: ", todo);
+      })
+        .catch((error) => {
+          console.error(error);
+      });
+    });//new
+
+    todoActions.append(todoStatus, deleteButton); //new
   //itraukiam naujus elementus
-    todoEl.append(todoTitle, todoStatus);
+    todoEl.append(todoTitle,todoActions ); //new
     document.querySelector(".todo-container").prepend(todoEl);
   };
   
