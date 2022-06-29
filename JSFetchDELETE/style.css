@@ -1,0 +1,19 @@
+.card {
+  border: 1px solid grey;
+  text-align: center;
+  width: 40%;
+}
+
+img {
+    width: 100%;
+}
+
+#product-form {
+    padding: 5px;
+}
+input, button{
+    margin: 5px;
+}
+h2 {
+    margin-left: 15px;
+}
