@@ -67,12 +67,29 @@ const renderUser = (user) => {
  fetch("https://jsonplaceholder.typicode.com/users")
  .then((resp) => resp.json())
  .then((resonpse) => {
-const fisrtUser = resonpse[0];
-renderUser(fisrtUser);
+    resonpse.forEach((fisrtUser) => renderUser(fisrtUser));
  })
  .catch(error => {
      console.error(error, ":Failed to load users");
  });
+
+ const renderUserCard = (user) => {
+    const photo = document.createElement("img");
+    const userName= document.createElement("h3");
+    const email =document.createElement("p");
+    const street = document.createElement("p");
+    photo.src = "https://st2.depositphotos.com/1024381/5201/i/950/depositphotos_52016905-stock-photo-young-man-handsome-face.jpg";
+    photo.alt = `${user.userName} photo`;
+    userName.textContent = user.username;
+    email.textContent = user.email;
+    street.textContent = user.address.street;
+
+    const card = document.createElement("div");
+    card.className = "card";
+    card.append(photo, userName, email, street);
+
+    document.querySelector(".cards").append(card);
+ };
 
 //istraukiame viena useri - per / nurodome 1
  fetch("https://jsonplaceholder.typicode.com/users/1").then(resp => resp.json()).then(resonpse => {
